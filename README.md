@@ -39,7 +39,7 @@ El proyecto está estructurado separando las responsabilidades de la vista, la n
 
 ## 📂 Estructura del Proyecto
 
-El código está organizado modularmente para facilitar su mantenimiento y escalabilidad. ¡Haz clic en cualquier carpeta o archivo para abrirlo directamente!
+El código está organizado modularmente para facilitar su mantenimiento y escalabilidad.
 
 * [`model/`](app/src/main/java/com/vorkka/myapplication/model/): Contiene la estructura de datos extendida ([`Receta.kt`](app/src/main/java/com/vorkka/myapplication/model/Receta.kt) con ingredientes, pasos e imágenes).
 
