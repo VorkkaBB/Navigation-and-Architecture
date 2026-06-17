@@ -39,10 +39,14 @@ El proyecto está estructurado separando las responsabilidades de la vista, la n
 
 ## 📂 Estructura del Proyecto
 
-El código está organizado modularmente para facilitar su mantenimiento y escalabilidad:
+El código está organizado modularmente para facilitar su mantenimiento y escalabilidad. ¡Haz clic en cualquier carpeta o archivo para abrirlo directamente!
 
-* `model/`: Contiene la estructura de datos extendida (`Receta.kt` con ingredientes, pasos e imágenes).
-* `viewmodel/`: Contiene la lógica de estado y la fuente de datos local (`RecetasViewModel.kt`).
-* `ui.screens/`: Contiene los Composables de las vistas principales (`Pantallas.kt`).
-* `navigation/`: Define las rutas, la barra superior dinámica y el controlador (`AppNavegacion.kt`).
-* `ui.theme/`: Configuración de tokens de color y tipografía de Material 3.
+* [`model/`](app/src/main/java/com/vorkka/myapplication/model/): Contiene la estructura de datos extendida ([`Receta.kt`](app/src/main/java/com/vorkka/myapplication/model/Receta.kt) con ingredientes, pasos e imágenes).
+
+* [`viewmodel/`](app/src/main/java/com/vorkka/myapplication/viewmodel/): Contiene la lógica de estado y la fuente de datos local ([`RecetasViewModel.kt`](app/src/main/java/com/vorkka/myapplication/viewmodel/RecetasViewModel.kt)).
+
+* [`ui.screens/`](app/src/main/java/com/vorkka/myapplication/ui/screens/): Contiene los Composables de las vistas principales ([`Pantallas.kt`](app/src/main/java/com/vorkka/myapplication/ui/screens/Pantallas.kt)).
+
+* [`navigation/`](app/src/main/java/com/vorkka/myapplication/navigation/): Define las rutas, la barra superior dinámica y el controlador ([`AppNavegacion.kt`](app/src/main/java/com/vorkka/myapplication/navigation/AppNavegacion.kt)).
+
+* [`ui.theme/`](app/src/main/java/com/vorkka/myapplication/ui/theme/): Configuración de tokens de color y tipografía de Material 3.
