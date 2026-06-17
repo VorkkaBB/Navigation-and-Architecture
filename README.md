@@ -1,15 +1,22 @@
 # 🍔 App de Recetas
 
-Esta aplicación es el resultado práctico de la **Unidad 4: Navegación y Arquitectura**. Es una app nativa para Android construida de forma declarativa que muestra un catálogo interactivo de recetas, permitiendo la navegación fluida entre una lista principal y una vista de detalles.
+Esta aplicación es el resultado práctico de la **Unidad 4: Navegación y Arquitectura**.
+---
+
+## 📱 Demostración
+
+<img width="250" alt="vid_unidad4_borja" src="https://github.com/user-attachments/assets/19773cfb-77b1-4367-9b7f-ae9da5ce4124" />
 
 ---
 
 ## 🚀 Características Principales
 
-* **Listado Dinámico:** Muestra una colección de platillos (Hamburguesa, Hotdogs, Papas a la francesa) renderizados de forma eficiente.
+* **Listado Dinámico Visual:** Muestra una colección de platillos.
 * **Navegación Moderna:** Implementación de rutas y paso de argumentos utilizando el componente de navegación de Jetpack Compose.
-* **Gestión de Estado Robusta:** Uso de la arquitectura recomendada para Android, garantizando que el estado de la aplicación sobreviva a la rotación del dispositivo.
-* **Diseño Adaptable (Edge-to-Edge):** Interfaz limpia que respeta los márgenes del sistema (notch, barra de estado y navegación) mediante la implementación de layouts modernos.
+* **Barra Superior Dinámica (TopAppBar):** El título de la aplicación cambia automáticamente dependiendo de la ruta actual ("Lista de Recetas" o "Detalle de Receta").
+* **Gestión de Estado Robusta:** Uso de la arquitectura recomendada para Android mediante `ViewModel` y `StateFlow`, garantizando que el estado sobreviva a la rotación del dispositivo.
+* **Carga Asíncrona de Imágenes:** Integración de la librería Coil para descargar y mostrar fotografías de alta calidad desde internet.
+* **Diseño Adaptable (Edge-to-Edge):** Interfaz limpia que respeta los márgenes del sistema (notch, barra de estado y navegación) mediante la implementación del componente `Scaffold`.
 
 ---
 
@@ -19,11 +26,12 @@ El proyecto está estructurado separando las responsabilidades de la vista, la n
 
 | Tecnología / Concepto | Propósito en la App |
 | :--- | :--- |
-| **Jetpack Compose** | Construcción de la interfaz gráfica 100% declarativa (reemplazando el antiguo sistema de XML). |
-| **Navigation Compose** | Gestión del `NavHost` y rutas para la transición entre la pantalla `Home` y `Detail`. |
-| **ViewModel & StateFlow** | Aislamiento de la lógica de negocio y mantenimiento del estado (receta seleccionada) independiente del ciclo de vida de la UI. |
-| **Scaffold** | Componente de Material Design 3 que provee `paddingValues` para adaptar la interfaz a los recortes de la cámara y la barra de sistema. |
-| **LazyColumn** | Renderizado altamente eficiente de la lista de elementos en pantalla. |
+| **Jetpack Compose** | Construcción de la interfaz gráfica 100% declarativa. |
+| **Navigation Compose** | Gestión del `NavHost` y rutas para la transición entre la pantalla de inicio y el detalle. |
+| **ViewModel & StateFlow** | Aislamiento de la lógica de negocio y mantenimiento del estado independiente del ciclo de vida de la UI. |
+| **Coil (AsyncImage)** | Carga eficiente de imágenes en red directamente en componentes Compose. |
+| **Scaffold & TopAppBar** | Componentes de Material Design 3 que proveen estructura, márgenes seguros (`paddingValues`) y barras de navegación. |
+| **LazyColumn & VerticalScroll** | Renderizado eficiente de la lista y habilitación de desplazamiento para pantallas de detalle extensas. |
 
 ---
 
@@ -31,18 +39,8 @@ El proyecto está estructurado separando las responsabilidades de la vista, la n
 
 El código está organizado modularmente para facilitar su mantenimiento y escalabilidad:
 
-* `model/`: Contiene la estructura de datos (`Receta.kt`).
-* `viewmodel/`: Contiene la lógica de estado (`RecetasViewModel.kt`).
-* `ui.screens/`: Contiene los Composables de las vistas (`Pantallas.kt`).
-* `navigation/`: Define las rutas y el controlador (`AppNavegacion.kt`).
+* `model/`: Contiene la estructura de datos extendida (`Receta.kt` con ingredientes, pasos e imágenes).
+* `viewmodel/`: Contiene la lógica de estado y la fuente de datos local (`RecetasViewModel.kt`).
+* `ui.screens/`: Contiene los Composables de las vistas principales (`Pantallas.kt`).
+* `navigation/`: Define las rutas, la barra superior dinámica y el controlador (`AppNavegacion.kt`).
 * `ui.theme/`: Configuración de tokens de color y tipografía de Material 3.
-
----
-
-## 📱 Cómo ejecutar el proyecto
-
-1. Clona este repositorio en tu máquina local.
-2. Abre el proyecto utilizando **Android Studio** (versión recomendada: Hedgehog o superior).
-3. Sincroniza los archivos de Gradle.
-4. Conecta un dispositivo físico mediante USB (con la depuración USB habilitada) o inicia un Emulador (AVD).
-5. Presiona el botón **Run** (Shift + F10) para compilar e instalar la aplicación.
