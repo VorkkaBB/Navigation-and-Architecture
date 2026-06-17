@@ -3,9 +3,11 @@
 Esta aplicación es el resultado práctico de la **Unidad 4: Navegación y Arquitectura**.
 ---
 
-## 📱 Demostración
+## 📱 Funcionamiento de la App
 
-<img width="250" alt="vid_unidad4_borja" src="https://github.com/user-attachments/assets/19773cfb-77b1-4367-9b7f-ae9da5ce4124" />
+<p align="center">
+  <img width="250" alt="vid_unidad4_borja" src="https://github.com/user-attachments/assets/19773cfb-77b1-4367-9b7f-ae9da5ce4124" />
+</p>
 
 ---
 
